@@ -1,13 +1,6 @@
-import React from "react";
-
+import "./style.scss";
 const Button = () => {
-  const backgroundColor = "purple";
-  const isActived = true;
-
-  const styles = {
-    backgroundColor: isActived ? backgroundColor : "gray",
-  };
-  return <button style={styles}>Botão</button>;
+  return <button className="button">Botão</button>;
 };
 
 export default Button;
