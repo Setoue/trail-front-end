@@ -1,11 +1,11 @@
 import React from "react";
-import Botao from "./components/Button";
+import Forms from "./components/Forms";
 
 function App() {
   return (
     <div className="App">
       <h1>Writing with TypeScript</h1>
-      <Botao />
+      <Forms />
     </div>
   );
 }
