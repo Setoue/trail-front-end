@@ -1,11 +1,11 @@
 import React from "react";
-
-import "./App.css";
+import Botao from "./components/Button";
 
 function App() {
   return (
     <div className="App">
       <h1>Writing with TypeScript</h1>
+      <Botao />
     </div>
   );
 }
