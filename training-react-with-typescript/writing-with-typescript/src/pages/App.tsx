@@ -1,4 +1,4 @@
-import React from "react";
+import Timer from "../components/Timer";
 import Forms from "../components/Forms";
 import List from "../components/List";
 import style from "./style.module.scss";
@@ -9,6 +9,7 @@ function App() {
       <h1>Writing with TypeScript</h1>
       <Forms />
       <List />
+      <Timer />
     </div>
   );
 }

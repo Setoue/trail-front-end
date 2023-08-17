@@ -1,4 +1,4 @@
-import style from "./style.module.scss";
+import style from "./List.module.scss";
 import Item from "./Item";
 
 const List = () => {

@@ -1,4 +1,4 @@
-import style from "./style.module.scss";
+import style from "./Button.module.scss";
 
 const Button = (prop: { name: string }) => {
   return <button className={style.button}>{prop.name}</button>;

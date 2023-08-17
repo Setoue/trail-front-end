@@ -1,5 +1,5 @@
 import Button from "../Button";
-import style from "./style.module.scss";
+import style from "./Forms.module.scss";
 
 const Forms = () => {
   return (
