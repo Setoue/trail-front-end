@@ -14,3 +14,7 @@ export interface IListProps {
 export interface IPropsItem extends ITask {
   selectTask: (selectTask: ITask) => void;
 }
+
+export interface IPropsTime {
+  selected: ITask | undefined;
+}

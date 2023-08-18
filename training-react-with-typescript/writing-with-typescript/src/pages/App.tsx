@@ -25,7 +25,7 @@ function App() {
       <h1>Writing with TypeScript</h1>
       <Forms setTasks={setTasks} />
       <List tasks={tasks} selectTask={selectTask} />
-      <Timer />
+      <Timer selected={selected} />
     </div>
   );
 }
