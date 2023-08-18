@@ -12,7 +12,7 @@ const Item = ({
   console.log({ name, time, selected, completed, id });
   return (
     <li
-      className={style.task}
+      className={` ${style.task} ${selected ? style.taskSelected : ""}`}
       onClick={() =>
         selectTask({
           name,
