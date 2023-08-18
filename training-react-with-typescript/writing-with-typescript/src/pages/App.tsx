@@ -4,16 +4,21 @@ import List from "../components/List";
 import style from "./style.module.scss";
 
 import { useState } from "react";
-import ITask from "../types/task";
+import { ITask } from "../types/ITasks";
 
 function App() {
   const [tasks, setTasks] = useState<Array<ITask> | []>([]);
+  const [selected, setSelected] = useState<ITask>();
+
+  const selectTask = (selectTask: ITask) => {
+    setSelected(selectTask);
+  };
 
   return (
     <div className={style.AppStyle}>
       <h1>Writing with TypeScript</h1>
       <Forms setTasks={setTasks} />
-      <List tasks={tasks} />
+      <List tasks={tasks} selectTask={selectTask} />
       <Timer />
     </div>
   );
