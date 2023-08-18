@@ -2,6 +2,7 @@ import ITask from "../../types/task";
 import Button from "../Button";
 import style from "./Forms.module.scss";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const Forms = ({
   setTasks,
@@ -17,7 +18,7 @@ const Forms = ({
     e.preventDefault();
     setTasks((prevSetTasks) => [
       ...prevSetTasks,
-      { ...state, selected: false, completed: false },
+      { ...state, selected: false, completed: false, id: uuidv4 },
     ]);
     setState({
       name: "",
