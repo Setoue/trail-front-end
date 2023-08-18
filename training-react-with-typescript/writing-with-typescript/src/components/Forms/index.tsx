@@ -18,7 +18,7 @@ const Forms = ({
     e.preventDefault();
     setTasks((prevSetTasks) => [
       ...prevSetTasks,
-      { ...state, selected: false, completed: false, id: uuidv4 },
+      { ...state, selected: false, completed: false, id: uuidv4() },
     ]);
     setState({
       name: "",
