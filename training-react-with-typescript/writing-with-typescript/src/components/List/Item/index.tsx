@@ -1,5 +1,5 @@
 import { IPropsItem } from "../../../types/ITasks";
-import style from "../List.module.scss";
+import style from "./Item.module.scss";
 
 const Item = ({
   name,
