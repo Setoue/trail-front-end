@@ -1,4 +1,4 @@
-import ITask from "../../types/task";
+import { ITask } from "../../types/ITasks";
 import Button from "../Button";
 import style from "./Forms.module.scss";
 import { useState } from "react";
