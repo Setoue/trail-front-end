@@ -1,8 +1,13 @@
+import ITask from "../../types/task";
 import Button from "../Button";
 import style from "./Forms.module.scss";
 import { useState } from "react";
 
-const Forms = () => {
+const Forms = ({
+  setTasks,
+}: {
+  setTasks: React.Dispatch<React.SetStateAction<Array<ITask>>>;
+}) => {
   const [state, setState] = useState({
     name: "",
     time: "00:00:00",
@@ -10,7 +15,7 @@ const Forms = () => {
 
   const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(state);
+    setTasks((prevSetTasks) => [...prevSetTasks, { ...state }]);
   };
 
   return (
