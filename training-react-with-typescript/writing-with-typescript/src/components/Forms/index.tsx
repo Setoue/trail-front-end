@@ -1,15 +1,28 @@
 import Button from "../Button";
 import style from "./Forms.module.scss";
+import { useState } from "react";
 
 const Forms = () => {
+  const [state, setState] = useState({
+    name: "",
+    time: "00:00:00",
+  });
+
+  const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(state);
+  };
+
   return (
-    <form className={style.newTask}>
+    <form className={style.newTask} onSubmit={submitTask}>
       <div className={style.inputContainer}>
         <label htmlFor="task">Add new study</label>
         <input
           type="text"
           name="task"
           id="task"
+          value={state.name}
+          onChange={(e) => setState({ ...state, name: e.target.value })}
           placeholder="What do you want to study?"
           required
         />
@@ -20,6 +33,8 @@ const Forms = () => {
           type="time"
           step="1"
           name="time"
+          value={state.time}
+          onChange={(e) => setState({ ...state, time: e.target.value })}
           min="00:00:00"
           max="01:30:00"
           required
