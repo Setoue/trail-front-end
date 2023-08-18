@@ -9,10 +9,6 @@ import ITask from "../types/task";
 function App() {
   const [tasks, setTasks] = useState<Array<ITask> | []>([]);
 
-  const handleAddTask = () => {
-    setTasks([...tasks, { name: "State", time: "05:00" }]);
-  };
-
   return (
     <div className={style.AppStyle}>
       <h1>Writing with TypeScript</h1>

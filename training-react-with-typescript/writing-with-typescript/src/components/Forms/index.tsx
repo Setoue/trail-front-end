@@ -16,6 +16,10 @@ const Forms = ({
   const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTasks((prevSetTasks) => [...prevSetTasks, { ...state }]);
+    setState({
+      name: "",
+      time: "00:00:00",
+    });
   };
 
   return (
