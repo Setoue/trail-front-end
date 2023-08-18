@@ -40,7 +40,7 @@ const Forms = () => {
           required
         />
       </div>
-      <Button name="Adicionar" />
+      <Button type="submit" name="Adicionar" />
     </form>
   );
 };

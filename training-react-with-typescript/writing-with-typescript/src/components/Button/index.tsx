@@ -1,7 +1,17 @@
 import style from "./Button.module.scss";
 
-const Button = (prop: { name: string }) => {
-  return <button className={style.button}>{prop.name}</button>;
+const Button = ({
+  name,
+  type = "button",
+}: {
+  name: string;
+  type?: "button" | "submit" | "reset" | undefined;
+}) => {
+  return (
+    <button type={type} className={style.button}>
+      {name}
+    </button>
+  );
 };
 
 export default Button;
