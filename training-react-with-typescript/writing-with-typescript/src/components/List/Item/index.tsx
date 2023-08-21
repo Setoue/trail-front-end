@@ -12,8 +12,11 @@ const Item = ({
   console.log({ name, time, selected, completed, id });
   return (
     <li
-      className={` ${style.task} ${selected ? style.taskSelected : ""}`}
+      className={` ${style.task} ${selected ? style.taskSelected : ""} ${
+        completed ? style.taskCompleted : ""
+      }`}
       onClick={() =>
+        !completed &&
         selectTask({
           name,
           time,
@@ -25,6 +28,9 @@ const Item = ({
     >
       <h3>{name}</h3>
       <span>{time}</span>
+      {completed && (
+        <span className={style.completed} aria-label="task completed"></span>
+      )}
     </li>
   );
 };

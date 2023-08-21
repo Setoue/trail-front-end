@@ -20,12 +20,29 @@ function App() {
     );
   };
 
+  const toFinishTask = () => {
+    if (selected) {
+      setTasks((prevTasks) =>
+        prevTasks.map((task) => {
+          if (task.id === selected.id) {
+            return {
+              ...task,
+              selected: false,
+              completed: true,
+            };
+          }
+          return task;
+        })
+      );
+    }
+  };
+
   return (
     <div className={style.AppStyle}>
       <h1>Writing with TypeScript</h1>
       <Forms setTasks={setTasks} />
       <List tasks={tasks} selectTask={selectTask} />
-      <Timer selected={selected} />
+      <Timer selected={selected} toFinishTask={toFinishTask} />
     </div>
   );
 }

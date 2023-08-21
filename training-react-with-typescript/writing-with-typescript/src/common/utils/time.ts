@@ -18,12 +18,14 @@ export const secondsToTime = (seconds: number) => {
 
 export const regressive = (
   setTime: React.Dispatch<React.SetStateAction<number | undefined>>,
-  time: number = 0
+  time: number = 0,
+  toFinishTask: () => void
 ) => {
   setTimeout(() => {
     if (time > 0) {
       setTime(time - 1);
-      return regressive(setTime, time - 1);
+      return regressive(setTime, time - 1, toFinishTask);
     }
+    toFinishTask();
   }, 1000);
 };

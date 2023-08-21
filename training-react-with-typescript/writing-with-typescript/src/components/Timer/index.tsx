@@ -1,11 +1,11 @@
 import Clock from "./Clock";
 import Button from "../Button";
 import style from "./Timer.module.scss";
-import { timeToSeconds } from "../../common/utils/time";
+import { regressive, timeToSeconds } from "../../common/utils/time";
 import { IPropsTime } from "../../types/ITasks";
 import { useEffect, useState } from "react";
 
-const Timer = ({ selected }: IPropsTime) => {
+const Timer = ({ selected, toFinishTask }: IPropsTime) => {
   const [timer, setTimer] = useState<number>();
 
   useEffect(() => {
@@ -20,7 +20,10 @@ const Timer = ({ selected }: IPropsTime) => {
       <div className={style.clockWrapper}>
         <Clock time={timer} />
       </div>
-      <Button name="Start" />
+      <Button
+        onClick={() => regressive(setTimer, timer, toFinishTask)}
+        name="Start"
+      />
     </div>
   );
 };
