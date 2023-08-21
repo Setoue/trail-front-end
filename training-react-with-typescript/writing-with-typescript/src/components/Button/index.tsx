@@ -1,14 +1,9 @@
+import { IButton } from "../../types/ITasks";
 import style from "./Button.module.scss";
 
-const Button = ({
-  name,
-  type = "button",
-}: {
-  name: string;
-  type?: "button" | "submit" | "reset" | undefined;
-}) => {
+const Button = ({ name, type = "button", onClick }: IButton) => {
   return (
-    <button type={type} className={style.button}>
+    <button type={type} onClick={onClick} className={style.button}>
       {name}
     </button>
   );

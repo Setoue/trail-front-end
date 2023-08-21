@@ -17,8 +17,15 @@ export interface IPropsItem extends ITask {
 
 export interface IPropsTime {
   selected: ITask | undefined;
+  toFinishTask: () => void;
 }
 
 export interface IPropsTimer {
   time: number | undefined;
+}
+
+export interface IButton {
+  name: string;
+  type?: "button" | "submit" | "reset" | undefined;
+  onClick?: () => void;
 }
