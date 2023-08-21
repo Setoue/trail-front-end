@@ -1,7 +1,8 @@
 const keys = document.querySelectorAll(".tecla");
 
 const playSounds = async (idSound) => {
-  await document.querySelector(idSound).play();
+  const sound = document.querySelector(idSound);
+  sound ? sound.play() : alert("sound not found it");
 };
 
 keys.forEach((key) => {
@@ -10,5 +11,9 @@ keys.forEach((key) => {
 
   key.onclick = () => {
     playSounds(idSound);
+  };
+
+  key.keypress = () => {
+    key.classList.add("ativa");
   };
 });
