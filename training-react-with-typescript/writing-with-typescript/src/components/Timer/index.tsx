@@ -17,9 +17,8 @@ const Timer = ({ selected }: IPropsTime) => {
   return (
     <div className={style.timer}>
       <p className={style.title}>Choice a card and start the timer</p>
-      Time: {timer}
       <div className={style.clockWrapper}>
-        <Clock />
+        <Clock time={timer} />
       </div>
       <Button name="Start" />
     </div>

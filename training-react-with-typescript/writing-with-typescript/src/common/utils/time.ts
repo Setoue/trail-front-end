@@ -6,3 +6,10 @@ export const timeToSeconds = (time: string) => {
 
   return hourInSeconds + minutesInSeconds + Number(sec);
 };
+
+export const secondsToTime = (seconds: number) => {
+  const [minTen, minUnit] = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const [secTen, secUnit] = String(seconds % 60).padStart(2, "0");
+
+  return { minTen, minUnit, secTen, secUnit };
+};

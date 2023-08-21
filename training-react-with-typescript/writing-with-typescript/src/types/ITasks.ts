@@ -18,3 +18,7 @@ export interface IPropsItem extends ITask {
 export interface IPropsTime {
   selected: ITask | undefined;
 }
+
+export interface IPropsTimer {
+  time: number | undefined;
+}
