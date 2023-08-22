@@ -8,4 +8,16 @@ export class Negotiation {
     this.#amount = amount;
     this.#value = value;
   }
+
+  get date() {
+    return this.#date;
+  }
+
+  get amount() {
+    return this.#amount;
+  }
+
+  get value() {
+    this.#value;
+  }
 }
