@@ -18,6 +18,10 @@ export class Negotiation {
   }
 
   get value() {
-    this.#value;
+    return this.#value;
+  }
+
+  get volume() {
+    return this.#amount * this.#value;
   }
 }
