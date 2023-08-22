@@ -1,4 +1,4 @@
-export class NegociationController {
+export class NegotiationController {
     constructor() {
         this.inputDate = document.querySelector("#date");
         this.inputAmount = document.querySelector("#amount");

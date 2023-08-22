@@ -1,4 +1,4 @@
-export class NegociationController {
+export class NegotiationController {
   private inputDate;
   private inputAmount;
   private inputValue;
