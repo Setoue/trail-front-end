@@ -1,3 +1,5 @@
+import { Negotiation } from "../models/negotiation.js";
+
 export class NegotiationController {
   private inputDate;
   private inputAmount;
@@ -10,8 +12,12 @@ export class NegotiationController {
   }
 
   add() {
-    console.log(this.inputDate);
-    console.log(this.inputAmount);
-    console.log(this.inputValue);
+    const negotiation = new Negotiation(
+      this.inputDate.value,
+      this.inputAmount.value,
+      this.inputValue.value
+    );
+
+    console.log(negotiation);
   }
 }
