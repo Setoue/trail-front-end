@@ -1,23 +1,11 @@
 export class Negotiation {
   constructor(
-    private _date: Date,
-    private _amount: number,
-    private _value: number
+    public readonly date: Date,
+    public readonly amount: number,
+    public readonly value: number
   ) {}
 
-  get date() {
-    return this._date;
-  }
-
-  get amount() {
-    return this._amount;
-  }
-
-  get value() {
-    return this._value;
-  }
-
-  get volume() {
-    return this._amount * this._value;
+  get volume(): number {
+    return this.amount * this.value;
   }
 }
