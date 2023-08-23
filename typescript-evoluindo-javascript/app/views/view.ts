@@ -6,10 +6,9 @@ export abstract class View<T> {
     if (!element) {
       throw Error("attribute element return null");
     }
-    if (!toEscape) {
-      throw Error("script in template finded");
+    if (toEscape) {
+      this.toEscape = toEscape;
     }
-    this.toEscape = toEscape;
     this._element = element as HTMLInputElement;
   }
 
