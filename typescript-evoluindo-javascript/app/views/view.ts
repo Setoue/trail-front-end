@@ -1,6 +1,4 @@
-import { Negotiations } from "../models/negotiations";
-
-export class View<T> {
+export abstract class View<T> {
   protected _element: HTMLElement;
   constructor(selector: string) {
     this._element = document.querySelector(selector);
@@ -11,7 +9,5 @@ export class View<T> {
     this._element.innerHTML = template;
   }
 
-  template(model: T): string {
-    throw Error("Class children need implement the method template");
-  }
+  abstract template(model: T): string;
 }
