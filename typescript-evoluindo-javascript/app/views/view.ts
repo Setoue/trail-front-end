@@ -3,7 +3,7 @@ export abstract class View<T> {
   private toEscape = false;
   constructor(selector: string, toEscape?: boolean) {
     toEscape ? (this.toEscape = toEscape) : undefined;
-    this._element = document.querySelector(selector);
+    this._element = document.querySelector(selector) as HTMLInputElement;
   }
 
   public update(model: T): void {
