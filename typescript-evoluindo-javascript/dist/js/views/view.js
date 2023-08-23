@@ -1,8 +1,15 @@
 export class View {
     constructor(selector, toEscape) {
         this.toEscape = false;
-        toEscape ? (this.toEscape = toEscape) : undefined;
-        this._element = document.querySelector(selector);
+        const element = document.querySelector(selector);
+        if (!element) {
+            throw Error("attribute element return null");
+        }
+        if (!toEscape) {
+            throw Error("script in template finded");
+        }
+        this.toEscape = toEscape;
+        this._element = element;
     }
     update(model) {
         let template = this.template(model);

@@ -2,8 +2,15 @@ export abstract class View<T> {
   protected _element: HTMLElement;
   private toEscape = false;
   constructor(selector: string, toEscape?: boolean) {
-    toEscape ? (this.toEscape = toEscape) : undefined;
-    this._element = document.querySelector(selector) as HTMLInputElement;
+    const element = document.querySelector(selector);
+    if (!element) {
+      throw Error("attribute element return null");
+    }
+    if (!toEscape) {
+      throw Error("script in template finded");
+    }
+    this.toEscape = toEscape;
+    this._element = element as HTMLInputElement;
   }
 
   public update(model: T): void {
