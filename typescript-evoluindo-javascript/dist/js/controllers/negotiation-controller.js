@@ -14,9 +14,14 @@ export class NegotiationController {
     }
     add() {
         const negotiation = this.createNegotiation();
-        this.negotiations.addNegotiation(negotiation);
-        this.clearForms();
-        this.updateView();
+        if (negotiation.data.getDay() > 0 && negotiation.data.getDay() < 6) {
+            this.negotiations.addNegotiation(negotiation);
+            this.clearForms();
+            this.updateView();
+        }
+        else {
+            this.messageView.update("Only working days");
+        }
     }
     createNegotiation() {
         const exp = /-/g;
