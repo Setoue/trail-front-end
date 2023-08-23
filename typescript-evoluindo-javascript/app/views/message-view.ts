@@ -1,14 +1,9 @@
 import { View } from "./view.js";
 
-export class MessageView extends View {
-  templateMessage(message: string): string {
+export class MessageView extends View<string> {
+  template(model: string): string {
     return `
-        <p class="alert alert-info">${message}</p>
+        <p class="alert alert-info">${model}</p>
     `;
-  }
-
-  update(message: string): void {
-    const template = this.templateMessage(message);
-    this._element.innerHTML = template;
   }
 }

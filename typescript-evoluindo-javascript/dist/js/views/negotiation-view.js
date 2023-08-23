@@ -1,9 +1,6 @@
 import { View } from "./view.js";
 export class NegotiationsView extends View {
-    insertTemplateView(negotiations) {
-        this._element.innerHTML = this.template(negotiations);
-    }
-    template(negotiations) {
+    template(model) {
         return `
     
         <table class="table table-hover table-bordered">
@@ -15,7 +12,7 @@ export class NegotiationsView extends View {
                 </tr>
             </thead>
             <tbody>
-                ${negotiations
+                ${model
             .listNegotiations()
             .map((negotiation) => {
             return `

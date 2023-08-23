@@ -10,12 +10,12 @@ export class NegotiationController {
         this.inputDate = document.querySelector("#date");
         this.inputAmount = document.querySelector("#amount");
         this.inputValue = document.querySelector("#value");
-        this.negotiationsView.insertTemplateView(this.negotiations);
+        this.negotiationsView.update(this.negotiations);
     }
     add() {
         const negotiation = this.createNegotiation();
         this.negotiations.addNegotiation(negotiation);
-        this.negotiationsView.insertTemplateView(this.negotiations);
+        this.negotiationsView.update(this.negotiations);
         this.messageView.update("Negotiation added success");
         this.clearForms();
     }
