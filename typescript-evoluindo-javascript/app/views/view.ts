@@ -1,7 +1,8 @@
 export abstract class View<T> {
   protected _element: HTMLElement;
-  private toEscape: boolean;
+  private toEscape = false;
   constructor(selector: string, toEscape?: boolean) {
+    toEscape ? (this.toEscape = toEscape) : undefined;
     this._element = document.querySelector(selector);
   }
 

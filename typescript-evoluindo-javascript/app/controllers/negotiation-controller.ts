@@ -9,7 +9,7 @@ export class NegotiationController {
   private inputAmount: HTMLInputElement;
   private inputValue: HTMLInputElement;
   private negotiations: Negotiations = new Negotiations();
-  private negotiationsView = new NegotiationsView("#templateView");
+  private negotiationsView = new NegotiationsView("#templateView", true);
   private messageView = new MessageView("#messageView");
 
   constructor() {
@@ -21,14 +21,16 @@ export class NegotiationController {
 
   public add(): void {
     const negotiation = Negotiation.createOf(
-      this.inputValue.value,
+      this.inputDate.value,
       this.inputAmount.value,
       this.inputValue.value
     );
 
     if (!this.isWorkingDay(negotiation.date)) {
       this.messageView.update("Only working days");
+      return;
     }
+
     this.negotiations.addNegotiation(negotiation);
     this.clearForms();
     this.updateView();
