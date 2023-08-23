@@ -1,4 +1,14 @@
 export class NegotiationsView {
+  private _elementTemplate: HTMLElement;
+
+  constructor(selector: string) {
+    this._elementTemplate = document.querySelector(selector);
+  }
+
+  insertTemplateView(): void {
+    this._elementTemplate.innerHTML = this.template();
+  }
+
   template(): string {
     return `
     

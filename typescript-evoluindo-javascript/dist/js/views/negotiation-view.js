@@ -1,4 +1,10 @@
 export class NegotiationsView {
+    constructor(selector) {
+        this._elementTemplate = document.querySelector(selector);
+    }
+    insertTemplateView() {
+        this._elementTemplate.innerHTML = this.template();
+    }
     template() {
         return `
     
