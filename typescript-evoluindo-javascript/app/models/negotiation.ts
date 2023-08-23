@@ -5,16 +5,7 @@ export class Negotiation {
     public readonly value: number
   ) {}
 
-  get date(): Date {
-    const date = new Date(this._date.getTime());
-    return date;
-  }
-
-  get volume(): number {
-    return this.amount * this.value;
-  }
-
-  static createOf(
+  public static createOf(
     dateString: string,
     amountString: string,
     valueString: string
@@ -26,5 +17,14 @@ export class Negotiation {
     const value = parseFloat(valueString);
 
     return new Negotiation(date, amount, value);
+  }
+
+  get date(): Date {
+    const date = new Date(this._date.getTime());
+    return date;
+  }
+
+  get volume(): number {
+    return this.amount * this.value;
   }
 }

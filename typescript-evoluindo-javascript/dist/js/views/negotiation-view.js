@@ -17,7 +17,7 @@ export class NegotiationsView extends View {
             .map((negotiation) => {
             return `
                     <tr>
-                        <td>${this.format(negotiation.data)}</td>
+                        <td>${this.format(negotiation.date)}</td>
                         <td>${negotiation.amount}</td>
                         <td>${negotiation.value}</td>
                     </tr>`;

@@ -1,11 +1,15 @@
 export abstract class View<T> {
   protected _element: HTMLElement;
-  constructor(selector: string) {
+  private toEscape: boolean;
+  constructor(selector: string, toEscape?: boolean) {
     this._element = document.querySelector(selector);
   }
 
   public update(model: T): void {
-    const template = this.template(model);
+    let template = this.template(model);
+    if (this.toEscape) {
+      template = template.replace(/<script>[\s\S]*?<\/script>/, "");
+    }
     this._element.innerHTML = template;
   }
 

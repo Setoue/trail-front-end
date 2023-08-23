@@ -1,3 +1,4 @@
+import { WeekDay } from "../enums/weekday.js";
 import { Negotiation } from "../models/negotiation.js";
 import { Negotiations } from "../models/negotiations.js";
 import { MessageView } from "../views/message-view.js";
@@ -13,25 +14,16 @@ export class NegotiationController {
         this.negotiationsView.update(this.negotiations);
     }
     add() {
-        const negotiation = this.createNegotiation();
-        if (negotiation.data.getDay() > 0 && negotiation.data.getDay() < 6) {
-            this.negotiations.addNegotiation(negotiation);
-            this.clearForms();
-            this.updateView();
-        }
-        else {
+        const negotiation = Negotiation.createOf(this.inputValue.value, this.inputAmount.value, this.inputValue.value);
+        if (!this.isWorkingDay(negotiation.date)) {
             this.messageView.update("Only working days");
         }
+        this.negotiations.addNegotiation(negotiation);
+        this.clearForms();
+        this.updateView();
     }
     isWorkingDay(date) {
-        return date.getDay() > 0 && date.getDay() < 6;
-    }
-    createNegotiation() {
-        const exp = /-/g;
-        const date = new Date(this.inputDate.value.replace(exp, ","));
-        const amount = parseInt(this.inputAmount.value);
-        const value = parseFloat(this.inputValue.value);
-        return new Negotiation(date, amount, value);
+        return date.getDay() > WeekDay.sunday && date.getDay() < WeekDay.saturday;
     }
     clearForms() {
         this.inputAmount.value = "";
