@@ -1,10 +1,7 @@
-export class NegotiationsView {
-    constructor(selector, _negotiations) {
-        this._negotiations = _negotiations;
-        this._elementTemplate = document.querySelector(selector);
-    }
+import { View } from "./view.js";
+export class NegotiationsView extends View {
     insertTemplateView(negotiations) {
-        this._elementTemplate.innerHTML = this.template(negotiations);
+        this._element.innerHTML = this.template(negotiations);
     }
     template(negotiations) {
         return `
