@@ -15,9 +15,8 @@ export class NegotiationController {
     add() {
         const negotiation = this.createNegotiation();
         this.negotiations.addNegotiation(negotiation);
-        this.negotiationsView.update(this.negotiations);
-        this.messageView.update("Negotiation added success");
         this.clearForms();
+        this.updateView();
     }
     createNegotiation() {
         const exp = /-/g;
@@ -31,5 +30,9 @@ export class NegotiationController {
         this.inputDate.value = "";
         this.inputValue.value = "";
         this.inputDate.focus();
+    }
+    updateView() {
+        this.negotiationsView.update(this.negotiations);
+        this.messageView.update("Negotiation added success");
     }
 }
