@@ -23,6 +23,9 @@ export class NegotiationController {
             this.messageView.update("Only working days");
         }
     }
+    isWorkingDay(date) {
+        return date.getDay() > 0 && date.getDay() < 6;
+    }
     createNegotiation() {
         const exp = /-/g;
         const date = new Date(this.inputDate.value.replace(exp, ","));

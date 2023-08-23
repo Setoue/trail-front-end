@@ -5,7 +5,7 @@ export class Negotiation {
     public readonly value: number
   ) {}
 
-  get data(): Date {
+  get date(): Date {
     const date = new Date(this._date.getTime());
     return date;
   }

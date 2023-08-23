@@ -21,13 +21,16 @@ export class NegotiationController {
   public add(): void {
     const negotiation = this.createNegotiation();
 
-    if (negotiation.data.getDay() > 0 && negotiation.data.getDay() < 6) {
-      this.negotiations.addNegotiation(negotiation);
-      this.clearForms();
-      this.updateView();
-    } else {
+    if (!this.isWorkingDay(negotiation.date)) {
       this.messageView.update("Only working days");
     }
+    this.negotiations.addNegotiation(negotiation);
+    this.clearForms();
+    this.updateView();
+  }
+
+  private isWorkingDay(date: Date): boolean {
+    return date.getDay() > 0 && date.getDay() < 6;
   }
 
   private createNegotiation(): Negotiation {
