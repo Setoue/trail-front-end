@@ -7,20 +7,23 @@ export class NegotiationController {
   private inputAmount: HTMLInputElement;
   private inputValue: HTMLInputElement;
   private negotiations: Negotiations = new Negotiations();
-  private negotiationsView = new NegotiationsView("#templateView");
+  private negotiationsView = new NegotiationsView(
+    "#templateView",
+    this.negotiations
+  );
 
   constructor() {
     this.inputDate = document.querySelector("#date");
     this.inputAmount = document.querySelector("#amount");
     this.inputValue = document.querySelector("#value");
-    this.negotiationsView.insertTemplateView();
+    this.negotiationsView.insertTemplateView(this.negotiations);
   }
 
   add(): void {
     const negotiation = this.createNegotiation();
 
     this.negotiations.addNegotiation(negotiation);
-    console.log(this.negotiations.listNegotiations());
+    this.negotiationsView.insertTemplateView(this.negotiations);
 
     this.clearForms();
   }

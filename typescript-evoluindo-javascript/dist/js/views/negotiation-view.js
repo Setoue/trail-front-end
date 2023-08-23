@@ -1,11 +1,12 @@
 export class NegotiationsView {
-    constructor(selector) {
+    constructor(selector, _negotiations) {
+        this._negotiations = _negotiations;
         this._elementTemplate = document.querySelector(selector);
     }
-    insertTemplateView() {
-        this._elementTemplate.innerHTML = this.template();
+    insertTemplateView(negotiations) {
+        this._elementTemplate.innerHTML = this.template(negotiations);
     }
-    template() {
+    template(negotiations) {
         return `
     
         <table class="table table-hover table-bordered">
@@ -14,9 +15,20 @@ export class NegotiationsView {
                     <th>Date</th>
                     <th>Amount</th>
                     <th>Value</th>
-                </r>
+                </tr>
             </thead>
             <tbody>
+                ${negotiations
+            .listNegotiations()
+            .map((negotiation) => {
+            return `
+                    <tr>
+                        <td>${negotiation.data}</td>
+                        <td>${negotiation.amount}</td>
+                        <td>${negotiation.value}</td>
+                    </tr>`;
+        })
+            .join("")}
             </tbody>
         </table>
     `;
