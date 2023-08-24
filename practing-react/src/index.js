@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Start from "./pages/Start/index.js";
 import "./index.css";
+import AppRoutes from "./routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Start />
+    <AppRoutes />
   </React.StrictMode>
 );
