@@ -1,8 +1,9 @@
 import React from "react";
-import "./Start.module.css";
+import styles from "./Start.module.css";
+import Header from "../../components/Header";
 
 const Start = () => {
-  return <h1>Start</h1>;
+  return <Header />;
 };
 
 export default Start;
