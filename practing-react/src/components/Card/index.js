@@ -8,7 +8,7 @@ const Card = ({ id, titulo, capa }) => {
   const { favorite, addFavorite } = useFavoriteContext();
 
   const isFavorite = favorite.some((fav) => fav.id === id);
-  const icone = isFavorite ? favoriteIcon : disfavorIcon;
+  const icone = isFavorite ? disfavorIcon : favoriteIcon;
 
   return (
     <div className={styles.card}>
