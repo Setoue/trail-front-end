@@ -1,4 +1,3 @@
-import React, { Children } from "react";
 import styles from "./Title.module.css";
 
 const Title = ({ children }) => {
