@@ -1,13 +1,25 @@
 import React from "react";
 import styles from "./Card.module.css";
-import favorite from "./favorite.png";
+import favoriteIcon from "./favorite.png";
+import disfavorIcon from "./disfavor.png";
+import { useFavoriteContext } from "../../hooks/useFavorite";
 
-const Card = ({ titulo, capa }) => {
+const Card = ({ id, titulo, capa }) => {
+  const { favorite, addFavorite } = useFavoriteContext();
+
+  const isFavorite = favorite.some((fav) => fav.id === id);
+  const icone = isFavorite ? favoriteIcon : disfavorIcon;
+
   return (
     <div className={styles.card}>
       <img src={capa} alt={titulo} className={styles.banner} />
       <h2>{titulo}</h2>
-      <img src={favorite} alt="FavoriteMovie" className={styles.favorite} />
+      <img
+        src={icone}
+        alt="to Favorite Movie"
+        className={styles.favorite}
+        onClick={() => addFavorite({ id, titulo, capa })}
+      />
     </div>
   );
 };
