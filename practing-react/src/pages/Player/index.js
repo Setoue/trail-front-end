@@ -1,18 +1,21 @@
-import React from "react";
 import styles from "./Play.module.css";
 import Banner from "../../components/Banner/index";
 import Title from "../../components/Title/index";
 import { useParams } from "react-router-dom";
-import videos from "../../json/db.json";
 import NotFound from "../NotFound";
+import useFetchVideos from "../../hooks/useFetchVideos";
+import { useEffect } from "react";
 
 const Player = () => {
+  const { videos, getVideoId } = useFetchVideos();
   const parameters = useParams();
   const video = videos.find((video) => {
     return video.id === Number(parameters.id);
   });
 
-  console.log(video);
+  useEffect(() => {
+    getVideoId(parameters);
+  }, [getVideoId, parameters]);
 
   if (!video) {
     return <NotFound />;

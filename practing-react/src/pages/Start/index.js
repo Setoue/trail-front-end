@@ -1,11 +1,17 @@
-import React from "react";
 import styles from "./Start.module.css";
 import Banner from "../../components/Banner";
 import Title from "../../components/Title";
 import Card from "../../components/Card";
-import videos from "../../json//db.json";
+import useFetchVideos from "../../hooks/useFetchVideos";
+import { useEffect } from "react";
 
 const Start = () => {
+  const { videos, getVideo } = useFetchVideos();
+
+  useEffect(() => {
+    getVideo();
+  }, [getVideo]);
+
   return (
     <>
       <Banner img="home" />
