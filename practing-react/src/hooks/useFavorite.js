@@ -13,9 +13,13 @@ export const useFavoriteContext = () => {
       newFavorite.push(fav);
       return setFavorite(newFavorite);
     }
-    console.log("funcionou");
 
-    newFavorite.slice(newFavorite.indexOf(fav), 1);
+    newFavorite.slice(
+      newFavorite.indexOf(
+        (item) => item.id === newFavorite.find((item) => item.id === fav.id).id
+      ),
+      1
+    );
     return setFavorite(favorite);
   };
 
