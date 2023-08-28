@@ -1,5 +1,4 @@
 import "./CampoTexto.css";
-import React, { ReactElement } from "react";
 
 interface FieldTextProps {
   valor: string;
