@@ -32,7 +32,7 @@ const Time = ({
       </div>
     </section>
   ) : (
-    ""
+    <></>
   );
 };
 
