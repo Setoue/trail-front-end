@@ -10,7 +10,7 @@ interface FieldTextProps {
 
 const CampoTexto = ({
   valor,
-  obrigatorio,
+  obrigatorio = false,
   label,
   aoAlterado,
   placeholder,
