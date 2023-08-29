@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Item from "../Item/Item";
-import { Icone } from "../UI";
+import ImageFilter from "../ImageFilter";
 
 export const Itens = styled.div`
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
@@ -17,7 +17,7 @@ export const Itens = styled.div`
 export default ({ list }) => {
   return (
     <Itens>
-      <Icone />
+      {ImageFilter(list.type)}
       <Item {...list} />
       <span>{list.date}</span>
     </Itens>
