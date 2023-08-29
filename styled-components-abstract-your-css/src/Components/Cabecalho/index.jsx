@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { colorFirst } from "../UI/variaveis.js";
 
 const StyledHeader = styled.nav`
-  background-color: ${colorFirst}
+  background-color: ${colorFirst};
   display: flex;
   justify-content: space-between;
   padding: 0 15vw;
@@ -17,18 +17,6 @@ const ImageLogo = styled.img`
   width: 50px;
 `;
 
-const ButtonSecond = styled.a`
-  text-align: center;
-  border-radius: 3px;
-  padding: 5px 20px;
-  margin: 0 10px;
-  font-weight: 600;
-  border: 2px solid white;
-
-  background: white;
-  color: #41d3be;
-`;
-
 const ButtonFirst = styled.a`
   text-align: center;
   border-radius: 3px;
@@ -37,15 +25,17 @@ const ButtonFirst = styled.a`
   font-weight: 600;
   border: 2px solid white;
 
-  color: white;
-  background: transparent;
+  background: ${(props) => (props.primary ? "white" : colorFirst)};
+  color: ${(props) => (props.primary ? colorFirst : "white")};
 `;
 const Cabecalho = () => {
   return (
     <StyledHeader>
       <ImageLogo src={bank_logo} alt="Logo Smart Bank" />
       <div>
-        <ButtonSecond href="https://google.com">Ajuda</ButtonSecond>
+        <ButtonFirst primary href="https://google.com">
+          Ajuda
+        </ButtonFirst>
         <ButtonFirst href="https://google.com">Sair</ButtonFirst>
       </div>
     </StyledHeader>
