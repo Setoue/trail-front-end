@@ -4,4 +4,5 @@ export interface IColaborador {
   cargo?: string;
   corDeFundo?: string;
   time?: string;
+  data?: string;
 }
