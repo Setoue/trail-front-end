@@ -6,7 +6,7 @@ import olho_icone from "../../assets/images/olho.svg";
 import dinheiro from "../../assets/images/dinheiro.svg";
 import * as style from "../UI/index";
 
-const IconeMargin = styled(Icone)`
+const IconeMargin = styled(style.Icone)`
   margin-top: 2px;
 `;
 
