@@ -5,7 +5,4 @@ const Titulo = styled.h1`
   padding: 25px 0;
 `;
 
-// const Titulo = ({ children }) => {
-//   return <h1 className={Title}>{children}</h1>;
-// };
 export default Titulo;
