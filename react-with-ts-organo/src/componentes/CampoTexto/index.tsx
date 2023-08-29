@@ -2,7 +2,7 @@ import "./CampoTexto.css";
 
 interface FieldTextProps {
   valor: string;
-  obrigatorio: boolean;
+  obrigatorio?: boolean;
   label: string;
   aoAlterado: (valor: string) => void;
   placeholder: string;
