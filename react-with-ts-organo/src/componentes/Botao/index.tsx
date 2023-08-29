@@ -1,8 +1,8 @@
-// import React, { ReactElement, JSXElementConstructor } from "react";
+import { ReactElement } from "react";
 import "./Botao.css";
 
 interface ButtonProps {
-  children: string; //ReactElement<string, string | JSXElementConstructor<any>>;
+  children: string | ReactElement;
 }
 
 const Botao = ({ children }: ButtonProps) => {
