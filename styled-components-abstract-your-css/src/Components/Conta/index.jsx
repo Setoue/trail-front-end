@@ -28,7 +28,7 @@ const Conta = () => {
       <BoxMargin>
         Saldo disponível{" "}
         <span>
-          <style.Icone src={dinheiro} alt="Ícone Saldo" />
+          <style.IconeTheme src={dinheiro} alt="Ícone Saldo" />
         </span>
         {toggleState ? (
           <div className="saldo">
