@@ -26,3 +26,16 @@ describe('Should render input field', () => {
     expect(typeInput).toHaveValue(50);
   });
 });
+
+describe('Shoud call a event onSubmit ', () => {
+  test('when to click in transaction done', () => {
+    const realizarTransacao = jest.fn();
+
+    render(<Formulario realizarTransacao={realizarTransacao} />);
+
+    const button = screen.getByRole('button');
+    userEvent.click(button);
+
+    expect(realizarTransacao).toHaveBeenCalledTimes(1);
+  });
+});
