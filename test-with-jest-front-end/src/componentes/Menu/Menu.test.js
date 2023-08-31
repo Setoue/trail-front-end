@@ -25,3 +25,11 @@ test('Should be not render the link to extrato', () => {
   const linkExtrato = screen.queryByText('Extrato');
   expect(linkExtrato).not.toBeInTheDocument();
 });
+
+test('Should reneder a link list with class link', () => {
+  render(<Menu />);
+
+  const classLinks = screen.getAllByRole('link');
+  classLinks.forEach((link) => expect(link).toHaveClass('link'));
+  expect(classLinks).toMatchSnapshot();
+});
