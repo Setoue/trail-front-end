@@ -2,25 +2,27 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Formulario from '.';
 
-test('Should render input field', () => {
-  render(<Formulario />);
+describe('Should render input field', () => {
+  test('in the document', () => {
+    render(<Formulario />);
 
-  const inputField = screen.getByPlaceholderText('Digite um valor');
+    const inputField = screen.getByPlaceholderText('Digite um valor');
 
-  expect(inputField).toBeInTheDocument();
-});
+    expect(inputField).toBeInTheDocument();
+  });
 
-test('Should render a input field with a type number', () => {
-  render(<Formulario />);
+  test(' with a type number', () => {
+    render(<Formulario />);
 
-  const typeInput = screen.getByPlaceholderText('Digite um valor');
-  expect(typeInput).toHaveAttribute('type', 'number');
-});
+    const typeInput = screen.getByPlaceholderText('Digite um valor');
+    expect(typeInput).toHaveAttribute('type', 'number');
+  });
 
-test('Should render a input field that can to be filled', () => {
-  render(<Formulario />);
+  test('that can to be filled', () => {
+    render(<Formulario />);
 
-  const typeInput = screen.getByPlaceholderText('Digite um valor');
-  userEvent.type(typeInput, '50');
-  expect(typeInput).toHaveValue(50);
+    const typeInput = screen.getByPlaceholderText('Digite um valor');
+    userEvent.type(typeInput, '50');
+    expect(typeInput).toHaveValue(50);
+  });
 });
