@@ -1,0 +1,3 @@
+[submodule "react/react-optimizing-performace"]
+	path = react/react-optimizing-performace
+	url = git@github.com:Setoue/react-optimizing-performace.git
