@@ -1,3 +1,6 @@
 [submodule "react/react-optimizing-performace"]
 	path = react/react-optimizing-performace
 	url = git@github.com:Setoue/react-optimizing-performace.git
+[submodule "react/react-with-typescript"]
+	path = react/react-with-typescript
+	url = git@github.com:Setoue/react-with-typescript.git
