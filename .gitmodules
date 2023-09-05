@@ -19,3 +19,6 @@
 [submodule "jest/test-with-jest-front-end"]
 	path = jest/test-with-jest-front-end
 	url = git@github.com:Setoue/test-with-jest-front-end.git
+[submodule "javascript/js-web-dynamic-pages"]
+	path = javascript/js-web-dynamic-pages
+	url = git@github.com:Setoue/js-web-dynamic-pages.git
