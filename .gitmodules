@@ -16,3 +16,6 @@
 [submodule "css/styled-components-abstract-your-css"]
 	path = css/styled-components-abstract-your-css
 	url = git@github.com:Setoue/styled-components-abstract-your-css.git
+[submodule "jest/test-with-jest-front-end"]
+	path = jest/test-with-jest-front-end
+	url = git@github.com:Setoue/test-with-jest-front-end.git
