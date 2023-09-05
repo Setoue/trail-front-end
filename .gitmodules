@@ -22,3 +22,6 @@
 [submodule "javascript/js-web-dynamic-pages"]
 	path = javascript/js-web-dynamic-pages
 	url = git@github.com:Setoue/js-web-dynamic-pages.git
+[submodule "css/teste"]
+	path = css/teste
+	url = git@github.com:Setoue/teste.git
