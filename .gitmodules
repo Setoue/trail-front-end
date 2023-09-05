@@ -10,3 +10,6 @@
 [submodule "typescript/typescript-evoluindo-javascript"]
 	path = typescript/typescript-evoluindo-javascript
 	url = git@github.com:Setoue/typescript-evoluindo-javascript.git
+[submodule "react/writing-react-with-typescript"]
+	path = react/writing-react-with-typescript
+	url = git@github.com:Setoue/writing-react-with-typescript.git
