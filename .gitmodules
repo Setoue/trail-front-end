@@ -7,3 +7,6 @@
 [submodule "react/practing-react"]
 	path = react/practing-react
 	url = git@github.com:Setoue/practing-react.git
+[submodule "typescript/typescript-evoluindo-javascript"]
+	path = typescript/typescript-evoluindo-javascript
+	url = git@github.com:Setoue/typescript-evoluindo-javascript.git
