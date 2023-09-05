@@ -13,3 +13,6 @@
 [submodule "react/writing-react-with-typescript"]
 	path = react/writing-react-with-typescript
 	url = git@github.com:Setoue/writing-react-with-typescript.git
+[submodule "css/styled-components-abstract-your-css"]
+	path = css/styled-components-abstract-your-css
+	url = git@github.com:Setoue/styled-components-abstract-your-css.git
